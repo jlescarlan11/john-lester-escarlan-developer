@@ -125,3 +125,19 @@
 .label {
   @apply text-sm font-light tracking-wide;
 }
+
+.layout {
+  @apply max-w-5xl mx-auto px-4 lg:px-12;
+}
+
+section.layout {
+  @apply mt-16;
+}
+
+.text-1 {
+  @apply text-sm lg:text-lg font-light leading-8 text-foreground/80;
+}
+
+.text-2 {
+  @apply text-xs uppercase tracking-[0.2em] text-foreground/80  font-light;
+}

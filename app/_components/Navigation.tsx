@@ -1,6 +1,6 @@
 import pages from "@/data/navigationPages";
 import Link from "next/link";
-import Button from "./Button";
+import Button from "./common/Button";
 import { Menu, X } from "lucide-react";
 
 interface NavigationProps {

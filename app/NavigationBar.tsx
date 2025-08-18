@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Logo from "./_components/Logo";
+import Logo from "./_components/common/Logo";
 import {
   DesktopNavigation,
   MobileNavigationToggle,
@@ -26,7 +26,7 @@ const NavigationBar = () => {
 
   return (
     <div className="fixed w-full top-0 left-0 z-50 bg-background">
-      <nav className="h-28 flex items-center justify-between max-w-7xl mx-auto px-4 lg:px-0">
+      <nav className="layout h-28 flex items-center justify-between">
         <Logo />
         <div className="flex items-center">
           <DesktopNavigation setOpen={setOpen} />
