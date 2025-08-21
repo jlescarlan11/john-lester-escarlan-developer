@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Logo from "./_components/common/Logo";
-import {
-  DesktopNavigation,
-  MobileNavigationToggle,
-  MobileNavigation,
-} from "./_components/Navigation";
+import DesktopNavigation from "./_components/navigation/DekstopNavigation";
+import MobileNavigationToggle from "./_components/navigation/MobileNavigationToggle";
+import MobileNavigation from "./_components/navigation/MobileNavigation";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);

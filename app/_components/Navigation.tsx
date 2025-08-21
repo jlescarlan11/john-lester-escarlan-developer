@@ -3,7 +3,7 @@ import Link from "next/link";
 import Button from "./common/Button";
 import { Menu, X } from "lucide-react";
 
-interface NavigationProps {
+interface Navigation {
   open: boolean;
   setOpen: (open: boolean) => void;
 }
