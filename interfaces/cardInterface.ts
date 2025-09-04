@@ -5,7 +5,7 @@ interface CardInterface {
   image: string;
   skills: string[];
   duration: string;
-  links?: string[];
+  links?: Record<string, string | undefined>; // Allow undefined values
 }
 
 export default CardInterface;

@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cs.upcebu.edu.ph",
       },
+      {
+        protocol: "https",
+        hostname: "windsgate.com",
+      },
     ],
   },
 };

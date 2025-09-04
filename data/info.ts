@@ -24,11 +24,12 @@ const info = {
       image:
         "https://cs.upcebu.edu.ph/wp-content/uploads/2020/12/DCS-Logo-Full.png",
       skills: [
-        "Java",
-        "JavaScript",
-        "C/C++",
-        "Software Engineering",
-        "Data Structures",
+        "java",
+        "javascript",
+        "c/c++",
+        "sql",
+        "software engineering",
+        "data structures",
       ],
       duration: "August 2025 - Present",
     },
@@ -43,11 +44,11 @@ const info = {
       image:
         "https://cs.upcebu.edu.ph/wp-content/uploads/2024/12/math-program.jpg",
       skills: [
-        "Problem Solving",
-        "Statistical Analysis",
-        "Python",
-        "R",
-        "Mathematical Modeling",
+        "problem solving",
+        "statistical analysis",
+        "python",
+        "r",
+        "mathematical modeling",
       ],
       duration: "Septermber 2022 - June 2025",
     },
@@ -61,13 +62,13 @@ const info = {
         "Investigate and troubleshoot complex technical problems including database connection failures, server crashes, and application errors.",
         "Collaborate with development teams to implement preventive measures and optimize system performance based on monitoring insights.",
       ],
-      image: "/windsgate-logo.svg",
+      image: "https://windsgate.com/img/windsgate-logo2.png",
       skills: [
-        "Java",
-        "System Monitoring",
-        "Log Analysis",
-        "Troubleshooting",
-        "Slack",
+        "java",
+        "system monitoring",
+        "log analysis",
+        "troubleshooting",
+        "slack",
       ],
       duration: "June 2025 - Present",
     },
@@ -78,17 +79,64 @@ const info = {
         "Contributed to software development projects using C# and ASP.NET frameworks while maintaining high coding standards through active participation in code reviews",
         "Collaborated with development teams to enhance code quality and streamline project workflows through effective project management practices",
       ],
-      image: "/alliance-logo.svg", // Updated to match company name
+      image: "https://alliance.com.ph/assets/img/logo.svg", // Updated to match company name
       skills: [
-        "C#",
-        "ASP.NET",
-        "Code Review",
-        "Project Management",
-        "Team Collaboration",
+        "c#",
+        "asp.net",
+        "code review",
+        "project management",
+        "team collaboration",
       ],
       duration: "June - July 2025",
     },
   ],
+  featuredProjects: [
+    {
+      name: "Eduverse",
+      category: "Web Application",
+      description: [
+        "Built learning platform with user roles and course management features.",
+        "Implemented CRUD operations and invite-only registration system.",
+        "Developed training category module with database integration.",
+      ],
+      image:
+        "https://cs.upcebu.edu.ph/wp-content/uploads/2020/12/DCS-Logo-Full.png",
+      skills: [
+        "java",
+        "javascript",
+        "c/c++",
+        "software engineering",
+        "data structures",
+      ],
+      duration: "August 2025 - Present",
+    },
+    {
+      degree: "Bachelor of Science in Mathematics",
+      university: "University of the Philippines",
+      description: [
+        "Built strong analytical and problem-solving foundation through advanced mathematical concepts",
+        "Applied statistical methods and mathematical modeling to real-world problems",
+        "Developed programming skills for computational mathematics and data analysis",
+      ],
+      image:
+        "https://cs.upcebu.edu.ph/wp-content/uploads/2024/12/math-program.jpg",
+      skills: [
+        "problem solving",
+        "statistical analysis",
+        "python",
+        "r",
+        "mathematical modeling",
+      ],
+      duration: "Septermber 2022 - June 2025",
+    },
+  ],
+  contact: {
+    email: "jlescarlan11@gmail.com",
+    phone: "+63 912 345 6789",
+    address: "Cebu City, Central Visayas, PH",
+    github: "https://github.com/johnlester",
+    linkedin: "https://linkedin.com/in/johnlester",
+  },
 };
 
 export default info;

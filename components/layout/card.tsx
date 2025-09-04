@@ -3,6 +3,7 @@ import React from "react";
 import { Col2, Col3, Grid } from "./grid";
 import StyledImage from "../ui/image";
 import { Badge } from "../ui/badge";
+import Link from "next/link";
 
 interface CardProps {
   data: CardInterface;
@@ -49,17 +50,20 @@ const Card = ({ data }: CardProps) => {
             {/* Links */}
             {data.links && (
               <nav className="flex items-center space-x-6 pt-4">
-                {/* {data.links.map((link, index) => (
-                //   <StyledLink
-                //     key={index}
-                //     href={link.url}
-                //     target="_blank"
-                //     rel="noopener noreferrer"
-                //   >
-                //     <span>{link.label}</span>
-                //   </StyledLink>
-                ))} */}
-                hello
+                {Object.entries(data.links)
+                  .filter(([, href]) => href !== undefined) // Filter out undefined values
+                  .map(([label, href]) => (
+                    <Link
+                      key={href}
+                      href={href!} // TypeScript now knows href is string (not undefined)
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="info-text w-fit self-end justify-end items-end sm:justify-start sm:self-auto group"
+                    >
+                      <span>{label}</span>
+                      <div className="w-1/2 h-0.5 bg-foreground/40 transition-all duration-300 ease-in-out group-hover:w-full" />
+                    </Link>
+                  ))}
               </nav>
             )}
           </div>
