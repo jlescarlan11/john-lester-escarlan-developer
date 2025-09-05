@@ -68,29 +68,6 @@ export const projectsData = [
     },
     featured: true,
   },
-  {
-    title: "Talarama",
-    category: "Web Application",
-    description: [
-      "Developed a secure full-stack application featuring comprehensive user authentication and efficient data management systems.",
-      "Engineered responsive user interface utilizing modern design patterns and component-based architecture for optimal user experience.",
-      "Integrated OAuth authentication flow to streamline user login processes and enhance security protocols.",
-    ],
-    image: "/projects/proj_talarama.webp",
-    technologies: [
-      "next.js",
-      "prisma",
-      "daisy ui",
-      "tailwind css",
-      "typescript",
-    ],
-    date: "June 2025",
-    link: {
-      github: "https://github.com/jlescarlan11/talarama",
-      preview: "https://talarama.vercel.app/",
-    },
-    featured: true,
-  },
 ];
 
 export default projectsData;

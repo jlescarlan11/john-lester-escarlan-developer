@@ -43,7 +43,7 @@ const NavigationBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed w-full top-0 left-0 z-50 bg-background/95 backdrop-blur-sm border-b">
+    <div className="fixed w-full top-0 left-0 z-50 bg-background">
       <nav className="wrapper h-28 flex items-center justify-between">
         <Logo />
         <div className="flex items-center gap-4">

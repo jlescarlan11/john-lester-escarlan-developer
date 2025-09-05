@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:resume": "npx tsx scripts/build-resume.ts",
     "start": "next start",
     "lint": "eslint"
   },

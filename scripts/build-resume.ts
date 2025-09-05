@@ -645,7 +645,7 @@ ${
 
   const outputDir = path.join(__dirname, "../public");
   const texPath = path.join(outputDir, "resume.tex");
-  const pdfPath = path.join(outputDir, "john_lester_escarlan_resume.pdf");
+  const pdfPath = path.join(outputDir, "john_lester_escarlan_developer.pdf");
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });

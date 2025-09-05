@@ -1,7 +1,7 @@
 // components/MobileNavigationToggle.tsx
 import { NavigationProps } from "@/types/navigationProps";
 import React from "react";
-import { MdMenu, MdClose } from "react-icons/md";
+import { MdMenu, MdClose, MdMenuOpen } from "react-icons/md";
 
 const MobileNavigationToggle: React.FC<NavigationProps> = ({
   open,
@@ -14,7 +14,7 @@ const MobileNavigationToggle: React.FC<NavigationProps> = ({
       aria-label={open ? "Close menu" : "Open menu"}
       type="button"
     >
-      {open ? <MdClose size={24} /> : <MdMenu size={24} />}
+      {open ? <MdMenuOpen size={28} /> : <MdMenu size={28} />}
     </button>
   );
 };

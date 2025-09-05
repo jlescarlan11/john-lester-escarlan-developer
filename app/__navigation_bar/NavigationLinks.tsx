@@ -1,43 +1,41 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import sections from "@/data/navigationSection";
 import { cn } from "@/lib/utils";
 import { NavigationLinksProps } from "@/types/navigationProps";
 import { smoothScrollToSection } from "@/utils/smoothScroll";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { Suspense, useEffect } from "react";
 
-const NavigationLinks: React.FC<NavigationLinksProps> = ({
+// Separate the component that uses useSearchParams
+const NavigationLinksContent: React.FC<NavigationLinksProps> = ({
   closeNav,
   activeSection,
   className,
 }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isHomePage = pathname === "/";
 
-  // Handle hash-based scrolling on page load
   useEffect(() => {
     if (!isHomePage) return;
 
-    // Check for hash in URL
-    const hash = window.location.hash.slice(1); // Remove the '#'
-    if (hash) {
-      // Small delay to ensure page is fully loaded
-      const timer = setTimeout(() => smoothScrollToSection(hash), 100);
+    const scrollTo = searchParams.get("scrollTo");
+    if (scrollTo) {
+      const timer = setTimeout(() => smoothScrollToSection(scrollTo), 100);
       return () => clearTimeout(timer);
     }
-  }, [isHomePage]);
+  }, [searchParams, isHomePage]);
 
   const handleNavigation = (sectionId: string) => {
     closeNav();
 
     if (isHomePage) {
-      // Update URL hash without triggering navigation
-      window.history.replaceState(null, "", `#${sectionId}`);
       smoothScrollToSection(sectionId);
     } else {
-      // Navigate to home page with hash
-      router.push(`/#${sectionId}`);
+      router.push(`/?scrollTo=${sectionId}`);
     }
   };
 
@@ -66,6 +64,25 @@ const NavigationLinks: React.FC<NavigationLinksProps> = ({
         Resume
       </Button>
     </nav>
+  );
+};
+
+// Loading fallback component
+const NavigationSkeleton = () => (
+  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8">
+    {Array.from({ length: 6 }).map((_, i) => (
+      <div key={i} className="h-6 w-16 bg-muted rounded animate-pulse" />
+    ))}
+    <div className="h-10 w-20 bg-muted rounded animate-pulse" />
+  </div>
+);
+
+// Main component with Suspense boundary
+const NavigationLinks: React.FC<NavigationLinksProps> = (props) => {
+  return (
+    <Suspense fallback={<NavigationSkeleton />}>
+      <NavigationLinksContent {...props} />
+    </Suspense>
   );
 };
 
