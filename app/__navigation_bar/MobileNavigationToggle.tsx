@@ -1,14 +1,20 @@
+// components/MobileNavigationToggle.tsx
 import { NavigationProps } from "@/types/navigationProps";
-import { MdMenu, MdMenuOpen } from "react-icons/md";
+import React from "react";
+import { MdMenu, MdClose } from "react-icons/md";
 
-const MobileNavigationToggle = ({ open, setOpen }: NavigationProps) => {
+const MobileNavigationToggle: React.FC<NavigationProps> = ({
+  open,
+  setOpen,
+}) => {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="lg:hidden z-50"
+      className="lg:hidden z-50 p-2 -m-2 rounded-md hover:bg-accent transition-colors"
       aria-label={open ? "Close menu" : "Open menu"}
+      type="button"
     >
-      {open ? <MdMenuOpen size={30} /> : <MdMenu size={30} />}
+      {open ? <MdClose size={24} /> : <MdMenu size={24} />}
     </button>
   );
 };

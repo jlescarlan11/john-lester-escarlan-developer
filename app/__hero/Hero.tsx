@@ -1,12 +1,19 @@
+"use client";
 import { Col2, Col3, Grid } from "@/components/layout/grid";
 import { Button } from "@/components/ui/button";
 import StyledImage from "@/components/ui/image";
 import Info from "@/components/ui/info";
 import info from "@/data/info";
 import socialLinks from "@/data/socialLinks";
+import { smoothScrollToSection } from "@/utils/smoothScroll";
 import Link from "next/link";
 
 const HeroSection = () => {
+  const handleClick = (sectionId: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    smoothScrollToSection(sectionId);
+  };
+
   return (
     <div
       id="hero"
@@ -36,11 +43,14 @@ const HeroSection = () => {
               >
                 Resume
               </Link>
-              <div className="absolute top-2 right-2 w-1 h-1 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Button>
-            <Button size="lg" variant="outline">
-              <Link href="contact-me">Contact Me</Link>
-              <div className="absolute top-2 right-2 w-1 h-1 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={(e) => handleClick("contact-me", e)}
+              className="relative group"
+            >
+              Contact Me
             </Button>
 
             <Info>Available for collaboration</Info>

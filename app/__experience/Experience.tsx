@@ -7,7 +7,7 @@ import React from "react";
 const ExperienceSection = () => {
   return (
     <Section>
-      <div id="about-me">
+      <div id="experience">
         <SectionHeader
           title="Experience"
           subtitle="Where I gained my expertise?"

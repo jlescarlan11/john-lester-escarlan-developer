@@ -1,12 +1,21 @@
-import { NavigationProps } from "@/types/navigationProps";
+import React from "react";
 import NavigationLinks from "./NavigationLinks";
 
-const DesktopNavigation = ({ setOpen }: Pick<NavigationProps, "setOpen">) => {
+interface DesktopNavigationProps {
+  setOpen: (open: boolean) => void;
+  activeSection: string;
+}
+
+const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
+  setOpen,
+  activeSection,
+}) => {
   return (
-    <div className="hidden lg:flex items-center gap-12">
-      <nav className="flex items-center gap-8">
-        <NavigationLinks closeNav={() => setOpen(false)} />
-      </nav>
+    <div className="hidden lg:block">
+      <NavigationLinks
+        closeNav={() => setOpen(false)}
+        activeSection={activeSection}
+      />
     </div>
   );
 };

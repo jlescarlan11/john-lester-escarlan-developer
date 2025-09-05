@@ -8,9 +8,9 @@ const info = {
   ],
   credentials: [
     `BS Computer Science, University of the Philippines Cebu`,
-    `2+ Years Experience in Software Industry`,
+    `1+ Years Experience in Software Industry`,
     `DOST JLSS 2024 Scholar`,
-    `JLPT N4 Passer`,
+    // `JLPT N4 Passer`,
   ],
   educations: [
     {

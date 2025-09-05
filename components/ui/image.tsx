@@ -17,7 +17,7 @@ const StyledImage = ({
         width={600}
         height={600}
         alt={`preview image of ${label}`}
-        className="w-full max-h-48 sm:max-h-80 lg:max-h-auto object-contain aspect-square grayscale scale-85 hover:scale-90 hover:grayscale-0 group-hover:grayscale-0 transition-all duration-500"
+        className="w-full max-h-48 sm:max-h-80 lg:max-h-auto object-contain aspect-square grayscale scale-80 hover:scale-85 hover:grayscale-0 group-hover:grayscale-0 transition-all duration-500"
         priority
       />
     </div>

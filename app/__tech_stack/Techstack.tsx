@@ -17,7 +17,7 @@ const TechstackSection = () => {
 
   return (
     <Section>
-      <div id="tect-stack">
+      <div id="tech-stack">
         <SectionHeader title="Tech Stack" subtitle="What I use and know?" />
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 lg:gap-20 items-start ">
           {displayedTechStack.map((tech, index) => {

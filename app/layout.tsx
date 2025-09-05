@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import NavigationBar from "./__navigation_bar/NavigationBar";
 import "./globals.css";
+import Footer from "./__footer/Footer";
+import { Toaster } from "sonner";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -26,6 +28,8 @@ export default function RootLayout({
         <main className="wrapper">
           <div>{children}</div>
         </main>
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );

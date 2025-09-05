@@ -1,17 +1,31 @@
 import React from "react";
 import NavigationLinks from "./NavigationLinks";
+import { cn } from "@/lib/utils";
 
-import { NavigationProps } from "@/types/navigationProps";
+interface MobileNavigationProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  activeSection: string;
+}
 
-const MobileNavigation = ({ open, setOpen }: NavigationProps) => {
+const MobileNavigation: React.FC<MobileNavigationProps> = ({
+  open,
+  setOpen,
+  activeSection,
+}) => {
   return (
     <div
-      className={`lg:hidden fixed inset-0 top-28 bg-background border-t z-40 flex flex-col transition-transform duration-300 ${
+      className={cn(
+        "lg:hidden fixed inset-0 top-28 bg-background/95 backdrop-blur-sm border-t z-40 transition-transform duration-300",
         open ? "translate-x-0" : "translate-x-full"
-      }`}
+      )}
     >
-      <nav className="flex-1 flex flex-col items-start justify-start p-8 gap-4 ">
-        <NavigationLinks closeNav={() => setOpen(false)} />
+      <nav className="flex flex-col p-8">
+        <NavigationLinks
+          closeNav={() => setOpen(false)}
+          activeSection={activeSection}
+          className="items-start"
+        />
       </nav>
     </div>
   );

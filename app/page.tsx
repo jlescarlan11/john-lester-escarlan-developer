@@ -13,8 +13,8 @@ export default function Home() {
       <AboutMeSection />
       <EducationSection />
       <ExperienceSection />
-      <FeaturedProjectSection />
       <TechstackSection />
+      <FeaturedProjectSection />
       <ContactMeSection />
     </>
   );
