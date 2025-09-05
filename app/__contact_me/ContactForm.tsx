@@ -209,7 +209,7 @@ const ContactForm = () => {
         />
 
         <div className="pt-4">
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting} variant="outline">
             {isSubmitting ? (
               <>
                 <LuLoader className="w-4 h-4 animate-spin" />

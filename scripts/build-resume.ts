@@ -3,7 +3,6 @@ import path from "path";
 import latex from "node-latex";
 import projectsData from "@/data/projects";
 import { techStack } from "@/data/techStack";
-import contactInfo from "@/data/contactInfo";
 import info from "@/data/info";
 
 // Type definitions
@@ -588,11 +587,11 @@ const generateLatexContent = (
         )}} & 
         \\fontsize{10pt}{10pt}\\selectfont 
         Email: \\textcolor{blue}{\\underline{\\hrefWithoutArrow{mailto:${escapeLatex(
-          contactInfo.email
-        )}}{${escapeLatex(contactInfo.email)}}}} \\quad
+          info.contact.email
+        )}}{${escapeLatex(info.contact.email)}}}} \\quad
         Phone: \\textcolor{blue}{\\underline{\\hrefWithoutArrow{tel:${escapeLatex(
-          contactInfo.phone
-        )}}{${escapeLatex(contactInfo.phone)}}}}
+          info.contact.phone
+        )}}{${escapeLatex(info.contact.phone)}}}}
     \\end{tabularx}
     
     \\vspace{2pt}
@@ -600,15 +599,15 @@ const generateLatexContent = (
     % Second line: Address on left, github and linkedin on right
     \\begin{tabularx}{\\textwidth}{@{}X r@{}}
         \\fontsize{10pt}{10pt}\\selectfont ${escapeLatex(
-          contactInfo.address
+          info.contact.address
         )} & 
         \\fontsize{10pt}{10pt}\\selectfont
         GitHub: \\textcolor{blue}{\\underline{\\hrefWithoutArrow{${escapeLatex(
-          contactInfo.github
-        )}}{${escapeLatex(cleanUrl(contactInfo.github))}}}} \\quad
+          info.contact.github
+        )}}{${escapeLatex(cleanUrl(info.contact.github))}}}} \\quad
         LinkedIn: \\textcolor{blue}{\\underline{\\hrefWithoutArrow{${escapeLatex(
-          contactInfo.linkedin
-        )}}{${escapeLatex(cleanUrl(contactInfo.linkedin))}}}}
+          info.contact.linkedin
+        )}}{${escapeLatex(cleanUrl(info.contact.linkedin))}}}}
     \\end{tabularx}
 \\end{header}
 \\vspace{5pt-0.3cm}

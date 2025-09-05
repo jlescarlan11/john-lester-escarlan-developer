@@ -1,19 +1,19 @@
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
-import contactInfo from "./contactInfo";
+import info from "./info";
 
 const socialLinks = [
   {
-    href: `mailto:${contactInfo.email}`,
+    href: `mailto:${info.contact.email}`,
     icon: SiGmail,
     label: "Email",
   },
   {
-    href: contactInfo.github,
+    href: info.contact.github,
     icon: SiGithub,
     label: "GitHub",
   },
   {
-    href: contactInfo.linkedin,
+    href: info.contact.linkedin,
     icon: SiLinkedin,
     label: "LinkedIn",
   },

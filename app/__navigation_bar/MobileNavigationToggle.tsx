@@ -1,7 +1,7 @@
 // components/MobileNavigationToggle.tsx
 import { NavigationProps } from "@/types/navigationProps";
 import React from "react";
-import { MdMenu, MdClose, MdMenuOpen } from "react-icons/md";
+import { MdMenu, MdMenuOpen } from "react-icons/md";
 
 const MobileNavigationToggle: React.FC<NavigationProps> = ({
   open,
