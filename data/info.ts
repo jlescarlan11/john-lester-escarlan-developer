@@ -1,13 +1,23 @@
 const info = {
-  introduction: `Full-stack developer with a mathematics and computer science
-              background, creating scalable web applications through clean,
-              maintainable code and problem-solving expertise.`,
+  introduction: `Software engineer with mathematics and computer science expertise, 
+                building scalable web applications through clean, maintainable code 
+                and systematic problem-solving.`,
+
   aboutMe: [
-    `I'm a versatile developer specializing in web and mobile development, project management, and data visualization. I'm passionate about creating robust web applications with clean, maintainable code that delivers exceptional user experiences.`,
-    `Currently, I work part-time at Wind's Gate Philippines as a Systems Analyst, where I analyze system logs and identify root causes of critical issues—from database connection failures to server crashes and application bugs. This role has strengthened my debugging expertise and ability to quickly diagnose problems across the entire technology stack.`,
+    `I'm a versatile software engineer specializing in web and mobile development, 
+     project management, and data visualization. I'm passionate about creating 
+     robust applications with clean, maintainable code that delivers exceptional 
+     user experiences and drives business value.`,
+
+    `Currently working as a Software Monitoring Engineer at Wind's Gate Philippines, I analyze 
+     complex system logs and diagnose critical issues—from database connection 
+     failures to server crashes and application bugs. This role has sharpened my 
+     debugging expertise and ability to rapidly identify problems across the 
+     entire technology stack, ensuring minimal downtime and optimal performance.`,
   ],
   credentials: [
     `BS Computer Science, University of the Philippines Cebu`,
+    `College Scholar`,
     `1+ Years Experience in Software Industry`,
     `DOST JLSS 2024 Scholar`,
     // `JLPT N4 Passer`,
@@ -88,6 +98,19 @@ const info = {
         "team collaboration",
       ],
       duration: "June - July 2025",
+    },
+    {
+      position: "Full-Stack Developer",
+      company: "Bayoa Analytics",
+      description: [
+        "Contributed to database optimization efforts, focusing on schema refinement for improved query performance",
+        "Implemented API endpoints for CRM functionality, participating in debugging and testing processes",
+        "Supported full-stack development team in delivering enhanced pipeline management features",
+      ],
+      image:
+        "https://media.licdn.com/dms/image/v2/D560BAQF67sEYS3jNFQ/company-logo_200_200/company-logo_200_200/0/1728289592575?e=1759968000&v=beta&t=4bODcbr8mYYtVzw_InALd7ddD4ewBOzvEwGW2vs57Rc",
+      skills: ["typeScript", "react", "full-stack development"],
+      duration: "September - November 2024",
     },
   ],
   featuredProjects: [

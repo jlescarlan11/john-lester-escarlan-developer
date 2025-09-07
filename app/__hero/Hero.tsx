@@ -35,15 +35,15 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-8 flex flex-col md:flex-row md:items-center gap-4">
-            <Button size="lg" variant="outline">
-              <Link
-                href="/john_lester_escarlan_developer.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <Link
+              href="/john_lester_escarlan_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="outline">
                 Resume
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
