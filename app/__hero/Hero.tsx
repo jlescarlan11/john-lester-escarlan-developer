@@ -40,7 +40,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="w-full">
                 Resume
               </Button>
             </Link>
