@@ -100,7 +100,7 @@ const info = {
       duration: "June - July 2025",
     },
     {
-      position: "Full-Stack Developer",
+      position: "Full-Stack Developer Intern",
       company: "Bayoa Analytics",
       description: [
         "Contributed to database optimization efforts, focusing on schema refinement for improved query performance",
