@@ -7,6 +7,7 @@ import info from "@/data/info";
 import socialLinks from "@/data/socialLinks";
 import { smoothScrollToSection } from "@/utils/smoothScroll";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const HeroSection = () => {
   const handleClick = (sectionId: string, e: React.MouseEvent) => {
@@ -15,7 +16,11 @@ const HeroSection = () => {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
       id="hero"
       className="min-h-dvh flex items-center justify-center section-spacing lg:!mt-0"
     >
@@ -79,7 +84,7 @@ const HeroSection = () => {
           </div>
         </Col2>
       </Grid>
-    </div>
+    </motion.div>
   );
 };
 

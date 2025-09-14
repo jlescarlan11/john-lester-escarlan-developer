@@ -1,20 +1,30 @@
+"use client";
 import { Col2, Col3, Grid } from "@/components/layout/grid";
 import Section from "@/components/layout/section";
 import Info from "@/components/ui/info";
 import SectionHeader from "@/components/ui/sectionHeader";
 import info from "@/data/info";
 import React from "react";
+import { motion } from "motion/react";
 
 const AboutMeSection = () => {
   return (
     <Section>
-      <div id="about-me">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        id="about-me"
+      >
         <SectionHeader title="About Me" subtitle="Who is John Lester?" />
         <Grid>
           <Col3>
-            <div className="flex flex-col gap-4">
+            <div>
               {info.aboutMe.map((about, i) => (
-                <p key={i}>{about}</p>
+                <p className="flex flex-col gap-4" key={i}>
+                  {about}
+                </p>
               ))}
             </div>
           </Col3>
@@ -41,7 +51,7 @@ const AboutMeSection = () => {
             </div>
           </Col2>
         </Grid>
-      </div>
+      </motion.div>
     </Section>
   );
 };

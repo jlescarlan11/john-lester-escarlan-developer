@@ -33,7 +33,13 @@ const FeaturedProjectSection = () => {
           <Info>More Projects</Info>
 
           <Button variant="outline" size="lg">
-            <Link href={"/projects"}>View All Projects</Link>
+            <Link
+              href="https://github.com/stars/jlescarlan11/lists/projects"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All Projects
+            </Link>
           </Button>
         </div>
       </div>

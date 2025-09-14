@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/sectionHeader";
 import { techStack } from "@/data/techStack";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "motion/react";
 
 const TechstackSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -22,7 +23,11 @@ const TechstackSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12 lg:gap-20 items-start ">
           {displayedTechStack.map((tech, index) => {
             return (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center group"
                 aria-label={`Technology: ${tech.name}`}
@@ -38,7 +43,7 @@ const TechstackSection = () => {
                 <span className="text-xs text-foreground/70 group-hover:text-foreground transition-colors duration-300">
                   {tech.name}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
         </div>
