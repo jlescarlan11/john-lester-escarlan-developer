@@ -105,7 +105,6 @@ const info = {
       description: [
         "Contributed to database optimization efforts, focusing on schema refinement for improved query performance",
         "Implemented API endpoints for CRM functionality, participating in debugging and testing processes",
-        "Supported full-stack development team in delivering enhanced pipeline management features",
       ],
       image:
         "https://media.licdn.com/dms/image/v2/D560BAQF67sEYS3jNFQ/company-logo_200_200/company-logo_200_200/0/1728289592575?e=1759968000&v=beta&t=4bODcbr8mYYtVzw_InALd7ddD4ewBOzvEwGW2vs57Rc",
