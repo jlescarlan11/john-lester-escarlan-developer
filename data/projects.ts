@@ -1,11 +1,26 @@
 export const projectsData = [
   {
-    title: "Eduverse",
-    category: "Web Application",
+    title: "SmartSched",
+    category: "Intelligent Scheduling App",
     description: [
-      "Developed a comprehensive learning management platform featuring role-based authentication and dynamic course administration capabilities.",
-      "Engineered secure CRUD operations with an invite-only registration system to ensure controlled access and data integrity.",
-      "Architected a scalable training category module with seamless database integration using Supabase backend services.",
+      "Developed an intelligent scheduling application with smart conflict detection, automated meeting optimization, and real-time calendar synchronization.",
+      "Implemented advanced scheduling algorithms and user-friendly interface design, achieving seamless appointment management and improved productivity for users.",
+    ],
+    image: "/projects/proj_smart_sched.png",
+    technologies: ["Next.js", "ShadCn", "Typescript", "Motion"],
+    date: "September 2025",
+    link: {
+      github: "https://github.com/jlescarlan11/SchedSmart",
+      preview: "https://schedsmart.vercel.app/",
+    },
+    featured: true,
+  },
+  {
+    title: "Eduverse",
+    category: "Learning Management System",
+    description: [
+      "Built a comprehensive Learning Management System with role-based access control, course management, and real-time progress tracking capabilities.",
+      "Optimized database queries and implemented caching strategies, achieving 40% faster page load times and supporting concurrent user sessions.",
     ],
     image: "/projects/proj_eduverse.png",
     technologies: [
@@ -16,7 +31,7 @@ export const projectsData = [
       "razor",
       "supabase",
     ],
-    date: "June 2025",
+    date: "July 2025",
     link: {
       github: "https://github.com/jlescarlan11/Eduverse",
     },
@@ -24,11 +39,10 @@ export const projectsData = [
   },
   {
     title: "Blog It",
-    category: "Web Application",
+    category: "Content Management System",
     description: [
-      "Engineered a full-stack blogging platform featuring comprehensive user profiles and interactive social engagement tools.",
-      "Developed robust content management system with real-time post creation, editing capabilities, and threaded commenting functionality.",
-      "Implemented secure user authentication flow and dynamic profile management using modern TypeScript architecture.",
+      "Developed a modern blogging platform featuring real-time markdown editing, live preview, and comprehensive content management capabilities.",
+      "Implemented advanced React patterns including custom hooks, context API, and optimized re-rendering, resulting in smooth user interactions and fast content loading.",
     ],
     image: "/projects/proj_blog_it.svg",
     technologies: [
@@ -47,11 +61,10 @@ export const projectsData = [
   },
   {
     title: "Talarama",
-    category: "Web Application",
+    category: "Full-Stack Application",
     description: [
-      "Developed a secure full-stack application featuring comprehensive user authentication and efficient data management systems.",
-      "Engineered responsive user interface utilizing modern design patterns and component-based architecture for optimal user experience.",
-      "Integrated OAuth authentication flow to streamline user login processes and enhance security protocols.",
+      "Created a full-stack web application featuring real-time data synchronization, file upload capabilities, and comprehensive user dashboard with modern UI/UX design.",
+      "Optimized application performance through code splitting, lazy loading, and responsive design, achieving 90+ Lighthouse scores across all performance metrics.",
     ],
     image: "/projects/proj_talarama.webp",
     technologies: [
@@ -61,7 +74,7 @@ export const projectsData = [
       "tailwind css",
       "typescript",
     ],
-    date: "June 2025",
+    date: "July 2025",
     link: {
       github: "https://github.com/jlescarlan11/talarama",
       preview: "https://talarama.vercel.app/",

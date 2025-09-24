@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import NavigationBar from "./__navigation_bar/NavigationBar";
+import Navigation from "@/components/navigation/Navigation";
 import "./globals.css";
-import Footer from "./__footer/Footer";
+import Footer from "@/components/layout/Footer";
 import { Toaster } from "sonner";
 
 const notoSans = Noto_Sans({
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notoSans.variable} antialiased`}>
-        <NavigationBar />
+        <Navigation />
         <main className="wrapper">
           <div>{children}</div>
         </main>

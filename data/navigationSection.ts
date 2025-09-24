@@ -1,7 +1,6 @@
 const sections = [
   ["about-me", "About Me"],
-  ["education", "Education"],
-  ["experience", "Experience"],
+  ["journey", "Journey"],
   ["tech-stack", "Tech Stack"],
   ["featured-projects", "Featured Project"],
   ["contact-me", "Contact Me"],

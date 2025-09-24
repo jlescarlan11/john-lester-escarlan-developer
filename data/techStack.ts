@@ -1,4 +1,26 @@
 export const techStack = [
+  // Core Programming Languages (Most In-Demand)
+  {
+    name: "TypeScript",
+    href: "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
+  },
+  {
+    name: "JavaScript",
+    href: "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
+  },
+  {
+    name: "Python",
+    href: "https://icon.icepanel.io/Technology/svg/Python.svg",
+  },
+  {
+    name: "Java",
+    href: "https://icon.icepanel.io/Technology/svg/Java.svg",
+  },
+  {
+    name: "C#",
+    href: "https://icon.icepanel.io/Technology/svg/C%23-%28CSharp%29.svg",
+  },
+
   // Frontend Frameworks & Libraries (High Demand)
   {
     name: "React",
@@ -17,28 +39,6 @@ export const techStack = [
   {
     name: "CSS",
     href: "https://icon.icepanel.io/Technology/svg/CSS3.svg",
-  },
-
-  // Programming Languages (Core Skills)
-  {
-    name: "TypeScript",
-    href: "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
-  },
-  {
-    name: "JavaScript",
-    href: "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
-  },
-  {
-    name: "Java",
-    href: "https://icon.icepanel.io/Technology/svg/Java.svg",
-  },
-  {
-    name: "C#",
-    href: "https://icon.icepanel.io/Technology/svg/C%23-%28CSharp%29.svg",
-  },
-  {
-    name: "Python",
-    href: "https://icon.icepanel.io/Technology/svg/Python.svg",
   },
   {
     name: "C",
@@ -66,6 +66,10 @@ export const techStack = [
     name: ".NET Core",
     href: "https://icon.icepanel.io/Technology/svg/.NET-core.svg",
   },
+  {
+    name: "FastAPI",
+    href: "https://icon.icepanel.io/Technology/svg/FastAPI.svg",
+  },
 
   // Databases (Data Management)
   {
@@ -75,6 +79,14 @@ export const techStack = [
   {
     name: "MySQL",
     href: "https://icon.icepanel.io/Technology/svg/MySQL.svg",
+  },
+  {
+    name: "MongoDB",
+    href: "https://icon.icepanel.io/Technology/svg/MongoDB.svg",
+  },
+  {
+    name: "Redis",
+    href: "https://icon.icepanel.io/Technology/svg/Redis.svg",
   },
 
   // Styling Frameworks (Modern UI)
@@ -87,7 +99,7 @@ export const techStack = [
     href: "https://icon.icepanel.io/Technology/svg/Bootstrap.svg",
   },
 
-  // Version Control & Containerization
+  // Version Control & DevOps
   {
     name: "Git",
     href: "https://icon.icepanel.io/Technology/svg/Git.svg",
@@ -97,10 +109,14 @@ export const techStack = [
     href: "https://icon.icepanel.io/Technology/svg/Docker.svg",
   },
 
-  // Cloud Platforms & Deployment
+  // Cloud Platforms & Deployment (High Demand)
   {
     name: "AWS",
     href: "https://icon.icepanel.io/Technology/svg/AWS.svg",
+  },
+  {
+    name: "Kubernetes",
+    href: "https://icon.icepanel.io/Technology/svg/Kubernetes.svg",
   },
   {
     name: "Vercel",
@@ -119,10 +135,18 @@ export const techStack = [
     href: "https://icon.icepanel.io/Technology/svg/Render.svg",
   },
 
-  // Development Tools
+  // Development Tools & Testing
   {
     name: "IntelliJ IDEA",
     href: "https://icon.icepanel.io/Technology/svg/IntelliJ-IDEA.svg",
+  },
+  {
+    name: "Jest",
+    href: "https://icon.icepanel.io/Technology/svg/Jest.svg",
+  },
+  {
+    name: "Postman",
+    href: "https://icon.icepanel.io/Technology/svg/Postman.svg",
   },
 
   // Design & Collaboration Tools
@@ -133,5 +157,9 @@ export const techStack = [
   {
     name: "Slack",
     href: "https://icon.icepanel.io/Technology/svg/Slack.svg",
+  },
+  {
+    name: "Jira",
+    href: "https://icon.icepanel.io/Technology/svg/Jira.svg",
   },
 ];

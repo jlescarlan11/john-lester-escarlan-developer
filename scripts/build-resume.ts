@@ -619,7 +619,13 @@ ${formatTechCategories(categorizedTechs)}
 \\end{onecolentry}
 
 \\section{Experience}
-${info.experiences.map(formatExperience).join("\n")}
+${info.journey.filter(item => item.type === 'experience').map(exp => formatExperience({
+  position: exp.title,
+  company: exp.organization,
+  description: exp.description,
+  duration: exp.duration,
+  skills: exp.skills
+})).join("\n")}
 
 \\section{Projects}
 ${
@@ -629,7 +635,13 @@ ${
 }
 
 \\section{Education}
-${info.educations.map(formatEducation).join("\n")}
+${info.journey.filter(item => item.type === 'education').map(edu => formatEducation({
+  degree: edu.title,
+  university: edu.organization,
+  description: edu.description,
+  duration: edu.duration,
+  skills: edu.skills
+})).join("\n")}
 
 \\end{document}
 `;

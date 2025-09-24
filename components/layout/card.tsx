@@ -16,52 +16,57 @@ const Card = ({ data }: CardProps) => {
         <StyledImage imageLink={data.image} label={data.mainInfo} />
       </Col2>
       <Col3>
-        <div className="space-y-4">
-          <header className="space-y-1">
-            <span className="text-xs flex flex-wrap gap-x-4 uppercase tracking-[0.2em] text-foreground/80 font-light">
+        <div className="space-y-4 sm:space-y-6 p-3 sm:p-4 lg:p-6">
+          <header className="space-y-2 sm:space-y-3">
+            <span className="info-text block">
               {data.subInfo}
             </span>
-            <h3 className="text-2xl lg:text-3xl font-extralight leading-tight tracking-tight">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-light leading-tight tracking-tight text-foreground">
               {data.mainInfo}
             </h3>
-            <span className="text-xs flex flex-wrap gap-x-4 uppercase tracking-[0.2em] text-foreground/80 font-light">
-              ({data.duration})
+            <span className="info-text block opacity-70">
+              {data.duration}
             </span>
           </header>
 
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-1.5 sm:gap-2 flex-wrap">
             {data.skills.map((skill, index) => (
-              <Badge key={index} variant="outline">
+              <Badge 
+                key={index} 
+                variant="outline" 
+                className="text-xs font-light border-border/50 hover:border-border transition-colors duration-200 px-2 py-1"
+              >
                 {skill}
               </Badge>
             ))}
           </div>
 
-          <div className="space-y-4">
-            {/* Description as bullet points */}
-            <ul className="text-sm mt-1 leading-relaxed opacity-90 list-disc list-outside pl-6">
+          <div className="space-y-3 sm:space-y-4">
+            {/* Japanese-inspired minimal bullet points */}
+            <ul className="space-y-2 sm:space-y-3">
               {data.descriptions.map((description, index) => (
-                <li key={index} className="text-pretty">
-                  <p className="flex-1">{description.trim()}</p>
+                <li key={index} className="text-sm sm:text-base leading-relaxed text-foreground/85 relative pl-4">
+                  <span className="absolute left-0 top-2 w-1 h-1 bg-foreground/40 rounded-full"></span>
+                  <p className="text-pretty leading-relaxed text-justify">{description.trim()}</p>
                 </li>
               ))}
             </ul>
 
-            {/* Links */}
+            {/* Refined link styling */}
             {data.links && (
-              <nav className="flex items-center space-x-6 pt-4">
+              <nav className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 border-t border-border/20">
                 {Object.entries(data.links)
-                  .filter(([, href]) => href !== undefined) // Filter out undefined values
+                  .filter(([, href]) => href !== undefined)
                   .map(([label, href]) => (
                     <Link
                       key={href}
-                      href={href!} // TypeScript now knows href is string (not undefined)
+                      href={href!}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="info-text w-fit self-end justify-end items-end sm:justify-start sm:self-auto group"
+                      className="info-text group hover:text-foreground transition-colors duration-200"
                     >
                       <span>{label}</span>
-                      <div className="w-1/2 h-0.5 bg-foreground/40 transition-all duration-300 ease-in-out group-hover:w-full" />
+                      <div className="w-0 h-px bg-foreground transition-all duration-300 ease-out group-hover:w-full" />
                     </Link>
                   ))}
               </nav>
