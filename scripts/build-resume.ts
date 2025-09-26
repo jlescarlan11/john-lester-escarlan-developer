@@ -672,8 +672,6 @@ ${info.journey.filter(item => item.type === 'education').map(edu => formatEducat
     process.exit(1);
   });
   pdf.on("finish", () => {
-    console.log(
-      "Narrow margin resume PDF generated at public/john_lester_escarlan_resume.pdf"
-    );
+    // Resume PDF generated successfully
   });
 })();

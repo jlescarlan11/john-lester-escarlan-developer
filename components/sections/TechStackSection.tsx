@@ -16,13 +16,6 @@ const TechStackSection = () => {
 
   const hasMoreItems = techStack.length > INITIAL_DISPLAY_COUNT;
 
-  // Debug: Log the current state
-  console.log('TechStack Debug:', {
-    showAll,
-    totalItems: techStack.length,
-    displayedCount: displayedTechStack.length,
-    hasMoreItems
-  });
 
   return (
     <SectionWrapper id="tech-stack">
@@ -65,7 +58,6 @@ const TechStackSection = () => {
           <div className="w-full h-px bg-border/30"></div>
           <button
             onClick={() => {
-              console.log('Button clicked! Current showAll:', showAll, 'Will change to:', !showAll);
               setShowAll(!showAll);
             }}
             className="px-10 py-4 text-base font-medium text-foreground/90 hover:text-foreground border-2 border-foreground/40 hover:border-foreground/60 rounded-lg transition-all duration-300 hover:bg-foreground/5 hover:scale-105 active:scale-95 bg-background shadow-sm hover:shadow-md"

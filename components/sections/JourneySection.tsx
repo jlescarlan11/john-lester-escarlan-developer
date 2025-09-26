@@ -13,9 +13,6 @@ const JourneySection = () => {
     return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
   });
 
-  // Debug: Log the journey data
-  console.log('Journey data:', info.journey);
-  console.log('Sorted journey:', sortedJourney);
 
   const containerVariants = {
     hidden: { opacity: 0 },
