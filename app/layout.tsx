@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation/Navigation";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Toaster />
+        <SpeedInsights />
       </body>
     </html>
   );
