@@ -43,7 +43,7 @@ const FormField = ({
   error?: string;
 }) => (
   <div className="space-y-2">
-    <Label className="text-xs uppercase tracking-[0.2em] text-foreground/80 font-light">
+    <Label className="text-xs uppercase tracking-[0.2em] text-foreground font-light">
       {label}
       {required && <span className="text-destructive ml-1">*</span>}
     </Label>

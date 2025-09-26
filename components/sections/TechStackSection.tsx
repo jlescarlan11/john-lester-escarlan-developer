@@ -39,7 +39,7 @@ const TechStackSection = () => {
                   sizes="(max-width: 640px) 48px, (max-width: 1024px) 64px, 80px"
                 />
               </div>
-              <span className="text-xs sm:text-sm text-center text-foreground/70 group-hover:text-foreground transition-colors duration-300 font-light">
+              <span className="text-xs sm:text-sm text-center text-foreground group-hover:text-foreground transition-colors duration-300 font-light">
                 {tech.name}
               </span>
             </div>
@@ -60,13 +60,13 @@ const TechStackSection = () => {
             onClick={() => {
               setShowAll(!showAll);
             }}
-            className="px-10 py-4 text-base font-medium text-foreground/90 hover:text-foreground border-2 border-foreground/40 hover:border-foreground/60 rounded-lg transition-all duration-300 hover:bg-foreground/5 hover:scale-105 active:scale-95 bg-background shadow-sm hover:shadow-md"
+            className="px-10 py-4 text-base font-medium text-foreground hover:text-foreground border-2 border-foreground/40 hover:border-foreground/60 rounded-lg transition-all duration-300 hover:bg-foreground/5 hover:scale-105 active:scale-95 bg-background shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           >
             {showAll
               ? "Show Less"
               : `Show ${techStack.length - INITIAL_DISPLAY_COUNT} More Technologies`}
           </button>
-          <div className="text-xs text-foreground/50">
+          <div className="text-xs text-foreground/70">
             {showAll ? "Click to hide additional technologies" : "Click to see all technologies"}
           </div>
         </motion.div>

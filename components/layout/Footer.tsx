@@ -23,7 +23,7 @@ const Footer = () => {
           >
             <Icon
               size={18}
-              className="text-foreground/40 hover:text-foreground transition-colors"
+              className="text-foreground/60 hover:text-foreground transition-colors"
             />
           </Link>
         ))}

@@ -45,7 +45,7 @@ const Card = ({ data }: CardProps) => {
             {/* Japanese-inspired minimal bullet points */}
             <ul className="space-y-2 sm:space-y-3">
               {data.descriptions.map((description, index) => (
-                <li key={index} className="text-sm sm:text-base leading-relaxed text-foreground/85 relative pl-4">
+                <li key={index} className="text-sm sm:text-base leading-relaxed text-foreground relative pl-4">
                   <span className="absolute left-0 top-2 w-1 h-1 bg-foreground/40 rounded-full"></span>
                   <p className="text-pretty leading-relaxed text-justify">{description.trim()}</p>
                 </li>

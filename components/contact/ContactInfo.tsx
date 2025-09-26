@@ -50,10 +50,10 @@ const ContactInfo = () => {
         {contactItems.map(({ icon: Icon, label, value, href }) => (
           <div key={label} className="flex items-start gap-4">
             <div className="flex-shrink-0 p-2 rounded-md bg-foreground/5 border border-foreground/10">
-              <Icon className="w-8 h-8 text-foreground/60" />
+              <Icon className="w-8 h-8 text-foreground/70" />
             </div>
             <div className="space-y-1">
-              <span className="text-xs uppercase tracking-[0.2em] text-foreground/80 font-light">
+              <span className="text-xs uppercase tracking-[0.2em] text-foreground font-light">
                 {label}
               </span>
               {href ? (

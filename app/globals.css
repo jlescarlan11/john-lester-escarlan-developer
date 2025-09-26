@@ -42,16 +42,16 @@
   --secondary: oklch(0.95 0 0);
   --secondary-foreground: oklch(0.08 0 0);
   --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.20 0 0);
   --accent: oklch(0.96 0 0);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.89 0 0);
+  --border: oklch(0.80 0 0);
   --input: oklch(0.96 0 0);
   --ring: oklch(0.08 0 0);
   /* Subtle accent for depth */
   --subtle: oklch(0.92 0 0);
-  --subtle-foreground: oklch(0.15 0 0);
+  --subtle-foreground: oklch(0.12 0 0);
   font-family: var(--font-noto-sans), sans-serif;
 }
 
@@ -68,15 +68,15 @@
   --secondary: oklch(0.95 0 0);
   --secondary-foreground: oklch(0.08 0 0);
   --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.20 0 0);
   --accent: oklch(0.96 0 0);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.89 0 0);
+  --border: oklch(0.80 0 0);
   --input: oklch(0.96 0 0);
   --ring: oklch(0.08 0 0);
   --subtle: oklch(0.92 0 0);
-  --subtle-foreground: oklch(0.15 0 0);
+  --subtle-foreground: oklch(0.12 0 0);
 }
 
 @layer base {
@@ -107,7 +107,7 @@
     @apply text-lg sm:text-xl lg:text-2xl font-normal leading-snug tracking-tight;
   }
   p {
-    @apply text-sm sm:text-base lg:text-lg font-light leading-relaxed text-foreground/85;
+    @apply text-sm sm:text-base lg:text-lg font-light leading-relaxed text-foreground;
     line-height: 1.75;
   }
   /* Japanese ma (negative space) principle */
@@ -129,12 +129,12 @@
   
   /* Refined typography components */
   .info-text {
-    @apply text-xs sm:text-sm uppercase tracking-[0.15em] text-foreground/85 font-light;
+    @apply text-xs sm:text-sm uppercase tracking-[0.15em] text-foreground font-light;
     letter-spacing: 0.1em;
   }
   
   .subtitle-text {
-    @apply text-sm sm:text-base text-foreground/80 font-light leading-relaxed;
+    @apply text-sm sm:text-base text-foreground font-light leading-relaxed;
   }
   
   /* White card styling with subtle shadows */
@@ -209,5 +209,20 @@
   select:focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
+  }
+  
+  /* Ensure minimum contrast for all text elements */
+  .text-muted-foreground {
+    color: var(--muted-foreground) !important;
+  }
+  
+  /* Improve contrast for small text */
+  .text-xs {
+    color: var(--foreground) !important;
+  }
+  
+  /* Ensure proper contrast for labels and form elements */
+  label {
+    color: var(--foreground) !important;
   }
 }

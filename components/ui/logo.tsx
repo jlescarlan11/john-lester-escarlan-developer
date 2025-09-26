@@ -7,7 +7,7 @@ const Logo = () => {
         LESTER
       </span>
       <div className="w-px h-4 bg-foreground/40" />
-      <span className="text-sm uppercase tracking-widest text-foreground/40 font-light">
+      <span className="text-sm uppercase tracking-widest text-foreground/60 font-light">
         Portfolio
       </span>
     </Link>

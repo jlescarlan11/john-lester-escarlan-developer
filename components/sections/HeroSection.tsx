@@ -60,7 +60,7 @@ const HeroSection = () => {
               John Lester Escarlan
             </motion.div>
             <motion.p 
-              className="border-l border-foreground/30 text-foreground/85 pl-4 sm:pl-6 text-justify leading-relaxed"
+              className="border-l border-foreground/30 text-foreground pl-4 sm:pl-6 text-justify leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
