@@ -61,6 +61,7 @@ const NavigationLinks: React.FC<{
         size="lg"
         variant="outline"
         className="text-lg lg:text-sm mt-2 lg:mt-0"
+        aria-label="Download resume"
       >
         Resume
       </Button>
@@ -77,7 +78,7 @@ const NavLink: React.FC<{
 }> = ({ label, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className="group relative flex flex-col items-start lg:items-center gap-1"
+    className="group relative flex flex-col items-start lg:items-center gap-1 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md p-1"
     type="button"
     aria-label={`Navigate to ${label} section`}
   >
@@ -107,9 +108,10 @@ const MobileMenuToggle: React.FC<{
 }> = ({ open, setOpen }) => (
   <button
     onClick={() => setOpen(!open)}
-    className="lg:hidden p-2 rounded-md hover:bg-foreground/5 transition-colors"
+    className="lg:hidden p-2 rounded-md hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
     aria-label="Toggle mobile menu"
     aria-expanded={open}
+    type="button"
   >
     <div className="w-6 h-6 flex flex-col justify-center items-center">
       <span
@@ -205,8 +207,8 @@ const Navigation: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed w-full top-0 left-0 z-50 bg-background">
-      <nav className="wrapper h-28 flex items-center justify-between">
+    <header className="fixed w-full top-0 left-0 z-50 bg-background" role="banner">
+      <nav className="wrapper h-28 flex items-center justify-between" role="navigation" aria-label="Main navigation">
         <Logo />
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
@@ -225,7 +227,7 @@ const Navigation: React.FC = () => {
         setOpen={setOpen}
         activeSection={activeSection}
       />
-    </div>
+    </header>
   );
 };
 

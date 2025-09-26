@@ -43,7 +43,9 @@ const ProjectsSection = () => {
               "noopener,noreferrer"
             )
           }
-          className="px-10 py-4 text-base font-medium text-foreground/90 hover:text-foreground border-2 border-foreground/40 hover:border-foreground/60 rounded-lg transition-all duration-300 hover:bg-foreground/5 hover:scale-105 active:scale-95 bg-background shadow-sm hover:shadow-md"
+          className="px-10 py-4 text-base font-medium text-foreground/90 hover:text-foreground border-2 border-foreground/40 hover:border-foreground/60 rounded-lg transition-all duration-300 hover:bg-foreground/5 hover:scale-105 active:scale-95 bg-background shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="View all projects on GitHub"
+          type="button"
         >
           View All Projects
         </button>

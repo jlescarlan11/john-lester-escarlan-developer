@@ -16,12 +16,13 @@ const HeroSection = () => {
   };
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
       id="hero"
       className="min-h-dvh flex items-center justify-center section-spacing lg:!mt-0"
+      aria-label="Hero section - Introduction"
     >
       <Grid>
         <Col3>
@@ -42,9 +43,21 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
+              className="sr-only"
+            >
+              John Lester Escarlan - Full Stack Developer
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight"
+              style={{ letterSpacing: '-0.02em' }}
+              role="heading"
+              aria-level={1}
             >
               John Lester Escarlan
-            </motion.h1>
+            </motion.div>
             <motion.p 
               className="border-l border-foreground/30 text-foreground/85 pl-4 sm:pl-6 text-justify leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +79,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" aria-label="Download resume PDF">
                 Resume
               </Button>
             </Link>
@@ -75,6 +88,7 @@ const HeroSection = () => {
               variant="outline"
               onClick={(e) => handleClick("contact-me", e)}
               className="w-full sm:w-auto"
+              aria-label="Navigate to contact section"
             >
               Contact Me
             </Button>
@@ -89,7 +103,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <StyledImage imageLink="/hero-image.png" label="Lester" />
+            <StyledImage imageLink="/hero-image.png" label="John Lester Escarlan - Professional headshot" />
           </motion.div>
           <motion.div 
             className="absolute -bottom-2 sm:-bottom-4 right-4 sm:right-12 flex gap-2 sm:gap-4"
@@ -121,7 +135,7 @@ const HeroSection = () => {
           </motion.div>
         </Col2>
       </Grid>
-    </motion.div>
+    </motion.section>
   );
 };
 

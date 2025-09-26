@@ -58,6 +58,8 @@ const FormField = ({
         className={`bg-transparent border-foreground/20 focus:border-primary/60 text-sm font-light transition-colors resize-none text-justify ${
           error ? "border-red-500" : ""
         }`}
+        aria-describedby={error ? `${name}-error` : undefined}
+        aria-invalid={error ? "true" : "false"}
       />
     ) : (
       <Input
@@ -69,10 +71,12 @@ const FormField = ({
         className={`bg-transparent border-foreground/20 focus:border-primary/60 text-sm font-light transition-colors ${
           error ? "border-red-500" : ""
         }`}
+        aria-describedby={error ? `${name}-error` : undefined}
+        aria-invalid={error ? "true" : "false"}
       />
     )}
 
-    {error && <p className="text-xs text-red-500 font-light">{error}</p>}
+    {error && <p id={`${name}-error`} className="text-xs text-red-500 font-light" role="alert">{error}</p>}
   </div>
 );
 
@@ -154,7 +158,7 @@ const ContactForm = () => {
     <div>
       <Info>Send Message</Info>
 
-      <form onSubmit={handleSubmit} className="space-y-6 mt-6">
+      <form onSubmit={handleSubmit} className="space-y-6 mt-6" role="form" aria-label="Contact form">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             label="Name"
