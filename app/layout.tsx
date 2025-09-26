@@ -13,12 +13,38 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "John Lester Escarlan - Full Stack Developer",
-  description: "Portfolio website of John Lester Escarlan, a passionate full stack developer specializing in modern web technologies and innovative solutions.",
-  keywords: ["John Lester Escarlan", "Full Stack Developer", "Software Engineer", "Portfolio", "Web Development", "React", "Next.js", "TypeScript"],
+  metadataBase: new URL('https://lester-escarlan.vercel.app'),
+  title: {
+    default: "John Lester Escarlan - Full Stack Developer",
+    template: "%s | John Lester Escarlan"
+  },
+  description: "Portfolio website of John Lester Escarlan, a passionate full stack developer specializing in modern web technologies and innovative solutions. View my projects, skills, and professional journey.",
+  keywords: [
+    "John Lester Escarlan", 
+    "Full Stack Developer", 
+    "Software Engineer", 
+    "Portfolio", 
+    "Web Development", 
+    "React", 
+    "Next.js", 
+    "TypeScript",
+    "JavaScript",
+    "Node.js",
+    "Frontend Developer",
+    "Backend Developer",
+    "Software Development",
+    "Programming",
+    "Tech Stack",
+    "Developer Portfolio"
+  ],
   authors: [{ name: "John Lester Escarlan" }],
   creator: "John Lester Escarlan",
   publisher: "John Lester Escarlan",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -30,16 +56,19 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: 'https://lester-escarlan.vercel.app',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://john-lester-escarlan.vercel.app", // Update this with your actual domain
+    url: "https://lester-escarlan.vercel.app",
     siteName: "John Lester Escarlan - Portfolio",
     title: "John Lester Escarlan - Full Stack Developer",
     description: "Portfolio website of John Lester Escarlan, a passionate full stack developer specializing in modern web technologies and innovative solutions.",
     images: [
       {
-        url: "/hero-image.png",
+        url: "https://lester-escarlan.vercel.app/hero-image.png",
         width: 1200,
         height: 630,
         alt: "John Lester Escarlan - Full Stack Developer",
@@ -51,8 +80,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "John Lester Escarlan - Full Stack Developer",
     description: "Portfolio website of John Lester Escarlan, a passionate full stack developer specializing in modern web technologies and innovative solutions.",
-    images: ["/hero-image.png"],
-    creator: "@jlescarlan11", // Update with your Twitter handle if you have one
+    images: ["https://lester-escarlan.vercel.app/hero-image.png"],
+    creator: "@jlescarlan11",
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
@@ -64,8 +93,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "John Lester Escarlan",
+    "jobTitle": "Full Stack Developer",
+    "description": "Passionate full stack developer specializing in modern web technologies and innovative solutions",
+    "url": "https://lester-escarlan.vercel.app",
+    "image": "https://lester-escarlan.vercel.app/hero-image.png",
+    "sameAs": [
+      "https://github.com/jlescarlan11",
+      "https://linkedin.com/in/john-lester-escarlan"
+    ],
+    "knowsAbout": [
+      "React",
+      "Next.js", 
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "Web Development",
+      "Full Stack Development"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Full Stack Developer",
+      "description": "Develops web applications using modern technologies"
+    }
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body className={`${notoSans.variable} antialiased`}>
         <a 
           href="#main-content" 
