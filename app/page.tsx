@@ -8,12 +8,24 @@ import TechStackSection from "@/components/sections/TechStackSection";
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <AboutSection />
-      <JourneySection />
-      <TechStackSection />
-      <ProjectsSection />
-      <ContactSection />
+      <section aria-label="Hero section" role="banner">
+        <HeroSection />
+      </section>
+      <section aria-label="About section" role="region">
+        <AboutSection />
+      </section>
+      <section aria-label="Journey section" role="region">
+        <JourneySection />
+      </section>
+      <section aria-label="Tech stack section" role="region">
+        <TechStackSection />
+      </section>
+      <section aria-label="Projects section" role="region">
+        <ProjectsSection />
+      </section>
+      <section aria-label="Contact section" role="region">
+        <ContactSection />
+      </section>
     </>
   );
 }

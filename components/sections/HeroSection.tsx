@@ -23,6 +23,7 @@ const HeroSection = () => {
       id="hero"
       className="min-h-dvh flex items-center justify-center section-spacing lg:!mt-0"
       aria-label="Hero section - Introduction"
+      role="banner"
     >
       <Grid>
         <Col3>
@@ -126,7 +127,12 @@ const HeroSection = () => {
                   }
                   aria-label={label}
                 >
-                  <Button variant="outline" size="sm" className="rounded-full p-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="rounded-full p-2"
+                    aria-label={label}
+                  >
                     <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </Button>
                 </Link>

@@ -61,9 +61,12 @@ const NavigationLinks: React.FC<{
         size="lg"
         variant="outline"
         className="text-lg lg:text-sm mt-2 lg:mt-0"
-        aria-label="Download resume"
+        aria-label="Download resume PDF"
+        asChild
       >
-        Resume
+        <a href="/john_lester_escarlan_resume.pdf" target="_blank" rel="noopener noreferrer">
+          Resume
+        </a>
       </Button>
     </nav>
   );

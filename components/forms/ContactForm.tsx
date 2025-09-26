@@ -212,15 +212,20 @@ const ContactForm = () => {
         />
 
         <div className="pt-4">
-          <Button type="submit" disabled={isSubmitting} variant="outline">
+          <Button 
+            type="submit" 
+            disabled={isSubmitting} 
+            variant="outline"
+            aria-label={isSubmitting ? "Sending message, please wait" : "Send message"}
+          >
             {isSubmitting ? (
               <>
-                <LuLoader className="w-4 h-4 animate-spin" />
+                <LuLoader className="w-4 h-4 animate-spin" aria-hidden="true" />
                 <span>Sending...</span>
               </>
             ) : (
               <>
-                <LuSend className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                <LuSend className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 <span>Send Message</span>
               </>
             )}
