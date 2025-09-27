@@ -13,7 +13,6 @@ const JourneySection = () => {
     return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
   });
 
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,12 +43,6 @@ const JourneySection = () => {
       : "Academic Foundation";
   };
 
-  const getTypeColor = (type: "experience" | "education") => {
-    return type === "experience"
-      ? "bg-foreground text-background"
-      : "bg-muted text-foreground";
-  };
-
   return (
     <SectionWrapper id="journey">
       <motion.div
@@ -66,7 +59,7 @@ const JourneySection = () => {
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute top-0 bottom-0 w-px bg-border/30 left-0"></div>
-          
+
           {sortedJourney.length === 0 ? (
             <div className="text-center py-8">
               <p className="text-muted-foreground">No journey data available</p>
@@ -80,19 +73,23 @@ const JourneySection = () => {
                   duration: 0.5,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className={`relative ${index !== sortedJourney.length - 1 ? "mb-8 sm:mb-12 lg:mb-16" : ""}`}
+                className={`relative ${
+                  index !== sortedJourney.length - 1
+                    ? "mb-8 sm:mb-12 lg:mb-16"
+                    : ""
+                }`}
               >
                 {/* Timeline dot */}
-                <div className={`absolute top-2 w-2 h-2 rounded-full left-0 transform -translate-x-1/2 ${
-                  item.current ? "bg-foreground" : "bg-foreground/20"
-                }`}></div>
-                
+                <div
+                  className={`absolute top-2 w-2 h-2 rounded-full left-0 transform -translate-x-1/2 ${
+                    item.current ? "bg-foreground" : "bg-foreground/20"
+                  }`}
+                ></div>
+
                 <div className="mb-3 sm:mb-4 ml-6">
                   <Badge
                     variant="secondary"
-                    className={`${getTypeColor(
-                      item.type
-                    )} text-xs font-medium mb-2`}
+                    className={`text-xs font-medium mb-2`}
                   >
                     {getTypeLabel(item.type)}
                   </Badge>

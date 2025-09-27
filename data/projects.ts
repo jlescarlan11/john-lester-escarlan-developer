@@ -3,7 +3,7 @@ export const projectsData = [
     title: "SmartSched",
     category: "Intelligent Scheduling App",
     description: [
-      "Developed an intelligent scheduling application with smart conflict detection, automated meeting optimization, and real-time calendar synchronization.",
+      "Developed an intelligent scheduling application with smart conflict detection.",
       "Implemented advanced scheduling algorithms and user-friendly interface design, achieving seamless appointment management and improved productivity for users.",
     ],
     image: "/projects/proj_smart_sched.png",
