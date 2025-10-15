@@ -2,26 +2,22 @@
 import React from "react";
 import { motion } from "motion/react";
 
-const SectionHeader = ({
-  title,
-  subtitle,
-}: {
+interface SectionHeaderProps {
   title: string;
   subtitle: string;
-}) => {
+}
+
+const SectionHeader = ({ title, subtitle }: SectionHeaderProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="flex items-center gap-6 mb-16"
+      className="text-center mb-16"
     >
-      <div className="">
-        <h2 className="">{title}</h2>
-        <p className="info-text">{subtitle}</p>
-      </div>
-      <div className="flex-1 h-px bg-foreground/20" />
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-2">{title}</h2>
+      <p className="info-text">{subtitle}</p>
     </motion.div>
   );
 };

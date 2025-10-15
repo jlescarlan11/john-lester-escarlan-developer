@@ -118,7 +118,7 @@
 }
 
 @layer components {
-  /* Japanese-inspired layout principles */
+  /* Layout utilities */
   .wrapper {
     @apply max-w-6xl w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
@@ -127,27 +127,18 @@
     @apply mt-16 sm:mt-20 md:mt-24 lg:mt-32;
   }
   
-  /* Refined typography components */
+  /* Typography utilities */
   .info-text {
     @apply text-xs sm:text-sm uppercase tracking-[0.15em] text-foreground font-light;
-    letter-spacing: 0.1em;
   }
   
   .subtitle-text {
     @apply text-sm sm:text-base text-foreground font-light leading-relaxed;
   }
   
-  /* White card styling with subtle shadows */
-  .card-minimal {
-    @apply bg-card border border-border/50 rounded-sm shadow-sm;
-    background-color: white !important;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.03), 0 1px 2px -1px rgb(0 0 0 / 0.03);
-  }
-  
-  .card-elevated {
-    @apply bg-card border border-border/30 rounded-sm;
-    background-color: white !important;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  /* Card utilities */
+  .card-base {
+    @apply bg-card border border-border/30 rounded-lg transition-all duration-300 hover:border-border/60;
   }
   
   /* Mobile-first responsive grid */
