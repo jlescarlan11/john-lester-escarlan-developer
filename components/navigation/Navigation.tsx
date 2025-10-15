@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Logo from "@/components/ui/logo";
+import React, { useEffect } from "react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import sections from "@/data/navigationSection";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { smoothScrollToSection } from "@/utils/smoothScroll";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -11,10 +9,9 @@ import { Suspense } from "react";
 
 // Navigation Links Component
 const NavigationLinks: React.FC<{
-  closeNav: () => void;
   activeSection: string;
   className?: string;
-}> = ({ closeNav, activeSection, className }) => {
+}> = ({ activeSection, className }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -31,8 +28,6 @@ const NavigationLinks: React.FC<{
   }, [searchParams, isHomePage]);
 
   const handleNavigation = (sectionId: string) => {
-    closeNav();
-
     if (isHomePage) {
       smoothScrollToSection(sectionId);
     } else {
@@ -43,7 +38,7 @@ const NavigationLinks: React.FC<{
   return (
     <nav
       className={cn(
-        "flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8",
+        "flex items-center gap-6",
         className
       )}
     >
@@ -56,18 +51,6 @@ const NavigationLinks: React.FC<{
           onClick={() => handleNavigation(sectionId)}
         />
       ))}
-
-      <Button
-        size="lg"
-        variant="outline"
-        className="text-lg lg:text-sm mt-2 lg:mt-0"
-        aria-label="Download resume PDF"
-        asChild
-      >
-        <a href="/john_lester_escarlan_resume.pdf" target="_blank" rel="noopener noreferrer">
-          Resume
-        </a>
-      </Button>
     </nav>
   );
 };
@@ -81,156 +64,58 @@ const NavLink: React.FC<{
 }> = ({ label, isActive, onClick }) => (
   <button
     onClick={onClick}
-    className="group relative flex flex-col items-start lg:items-center gap-1 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md p-1"
+    className="group relative flex items-center justify-center px-3 py-2 transition-all duration-500 ease-out focus:outline-none rounded-lg hover:bg-gray-50/60 hover:scale-105"
     type="button"
     aria-label={`Navigate to ${label} section`}
   >
     <span
       className={cn(
-        "text-lg lg:text-sm transition-colors duration-200",
+        "text-sm font-medium transition-all duration-700 ease-in-out relative",
         isActive
           ? "text-foreground"
-          : "text-muted-foreground hover:text-foreground"
+          : "text-foreground/60 hover:text-foreground/90"
       )}
     >
       {label}
     </span>
-    <div
-      className={cn(
-        "absolute -bottom-1 left-0 lg:left-1/2 lg:-translate-x-1/2 h-px bg-primary transition-all duration-300",
-        isActive ? "w-6" : "w-0 group-hover:w-6"
-      )}
-    />
-  </button>
-);
-
-// Mobile Menu Toggle Component
-const MobileMenuToggle: React.FC<{
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}> = ({ open, setOpen }) => (
-  <button
-    onClick={() => setOpen(!open)}
-    className="lg:hidden p-2 rounded-md hover:bg-foreground/5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-    aria-label="Toggle mobile menu"
-    aria-expanded={open}
-    type="button"
-  >
-    <div className="w-6 h-6 flex flex-col justify-center items-center">
-      <span
-        className={cn(
-          "block w-6 h-0.5 bg-foreground transition-all duration-300",
-          open ? "rotate-45 translate-y-1" : "translate-y-0"
-        )}
-      />
-      <span
-        className={cn(
-          "block w-6 h-0.5 bg-foreground transition-all duration-300 mt-1",
-          open ? "opacity-0" : "opacity-100"
-        )}
-      />
-      <span
-        className={cn(
-          "block w-6 h-0.5 bg-foreground transition-all duration-300 mt-1",
-          open ? "-rotate-45 -translate-y-1" : "translate-y-0"
-        )}
-      />
-    </div>
-  </button>
-);
-
-// Mobile Navigation Component
-const MobileNavigation: React.FC<{
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  activeSection: string;
-}> = ({ open, setOpen, activeSection }) => (
-  <div
-    className={cn(
-      "lg:hidden fixed inset-0 top-28 bg-background border-t z-40 transition-transform duration-300",
-      open ? "translate-x-0" : "translate-x-full"
+    
+    {/* Active state indicator with smooth transition */}
+    <div className={cn(
+      "absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-foreground rounded-full transition-all duration-700 ease-in-out",
+      isActive ? "w-8 opacity-100" : "w-0 opacity-0"
+    )} />
+    
+    {/* Hover state indicator */}
+    {!isActive && (
+      <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-foreground/30 w-0 group-hover:w-6 rounded-full transition-all duration-500 ease-out" />
     )}
-  >
-    <nav className="flex flex-col p-8">
-      <Suspense fallback={<NavigationSkeleton />}>
-        <NavigationLinks
-          closeNav={() => setOpen(false)}
-          activeSection={activeSection}
-          className="items-start"
-        />
-      </Suspense>
-    </nav>
-  </div>
-);
-
-// Loading skeleton for navigation
-const NavigationSkeleton = () => (
-  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-8">
-    {Array.from({ length: 6 }).map((_, i) => (
-      <div key={i} className="h-6 w-16 bg-muted rounded animate-pulse" />
-    ))}
-    <div className="h-10 w-20 bg-muted rounded animate-pulse" />
-  </div>
+  </button>
 );
 
 // Main Navigation Component
 const Navigation: React.FC = () => {
-  const [open, setOpen] = useState<boolean>(false);
   const sectionIds = sections.map(([id]) => id);
   const activeSection = useActiveSection(sectionIds);
 
-  // Handle mobile menu effects
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-
-      const handleEscape = (e: KeyboardEvent): void => {
-        if (e.key === "Escape") setOpen(false);
-      };
-
-      document.addEventListener("keydown", handleEscape);
-
-      return () => {
-        document.body.style.overflow = "";
-        document.removeEventListener("keydown", handleEscape);
-      };
-    }
-  }, [open]);
-
-  // Close mobile menu on resize to desktop
-  useEffect(() => {
-    const handleResize = (): void => {
-      if (window.innerWidth >= 1024) {
-        setOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <header className="fixed w-full top-0 left-0 z-50 bg-background" role="banner">
-      <nav className="wrapper h-28 flex items-center justify-between" role="navigation" aria-label="Main navigation">
-        <Logo />
-        <div className="flex items-center gap-4">
-          <div className="hidden lg:block">
-            <Suspense fallback={<NavigationSkeleton />}>
-              <NavigationLinks
-                closeNav={() => setOpen(false)}
-                activeSection={activeSection}
-              />
-            </Suspense>
-          </div>
-          <MobileMenuToggle open={open} setOpen={setOpen} />
-        </div>
-      </nav>
-      <MobileNavigation
-        open={open}
-        setOpen={setOpen}
-        activeSection={activeSection}
-      />
-    </header>
+    <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50" role="banner">
+      <div className="bg-white/85 backdrop-blur-lg border border-gray-200/60 rounded-full shadow-lg shadow-black/8 px-6 py-3 relative">
+        {/* Subtle inner glow for grounding */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-50/20 to-transparent rounded-full pointer-events-none" />
+        
+        <nav className="flex items-center justify-center relative z-10" role="navigation" aria-label="Main navigation">
+          <Suspense fallback={<div className="flex items-center gap-6">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} className="h-5 w-12 bg-muted/50 rounded animate-pulse" />
+            ))}
+          </div>}>
+            <NavigationLinks
+              activeSection={activeSection}
+            />
+          </Suspense>
+        </nav>
+      </div>
+    </div>
   );
 };
 

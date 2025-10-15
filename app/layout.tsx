@@ -15,10 +15,10 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lester-escarlan.vercel.app'),
   title: {
-    default: "John Lester Escarlan - Full Stack Developer",
+    default: "John Lester Escarlan - Software Engineer",
     template: "%s | John Lester Escarlan"
   },
-  description: "Portfolio website of John Lester Escarlan, a passionate full stack developer specializing in modern web technologies and innovative solutions. View my projects, skills, and professional journey.",
+  description: "Portfolio website of John Lester Escarlan, a passionate software engineer specializing in modern web technologies and innovative solutions. View my projects, skills, and professional journey.",
   keywords: [
     "John Lester Escarlan", 
     "Full Stack Developer", 

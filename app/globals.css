@@ -107,7 +107,7 @@
     @apply text-lg sm:text-xl lg:text-2xl font-normal leading-snug tracking-tight;
   }
   p {
-    @apply text-sm sm:text-base lg:text-lg font-light leading-relaxed text-foreground;
+    @apply text-sm sm:text-base lg:text-xl font-light leading-relaxed text-foreground;
     line-height: 1.75;
   }
   /* Japanese ma (negative space) principle */
@@ -152,7 +152,15 @@
   
   /* Mobile-first responsive grid */
   .grid-responsive {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .grid-auto-fit {
+    @apply grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    /* Prevents overflow on small screens */
+    @apply gap-4 sm:gap-6 lg:gap-8;
   }
   
   /* Timeline styles for journey section */

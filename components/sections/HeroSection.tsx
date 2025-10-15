@@ -1,8 +1,6 @@
 "use client";
-import { Col2, Col3, Grid } from "@/components/layout/grid";
 import { Button } from "@/components/ui/button";
 import StyledImage from "@/components/ui/image";
-import Info from "@/components/ui/info";
 import info from "@/data/info";
 import socialLinks from "@/data/socialLinks";
 import { smoothScrollToSection } from "@/utils/smoothScroll";
@@ -21,126 +19,72 @@ const HeroSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
       id="hero"
-      className="min-h-dvh flex items-center justify-center section-spacing lg:!mt-0"
+      className="min-h-dvh flex items-center justify-center lg:section-spacing lg:!mt-0 relative overflow-hidden pt-8 lg:pt-24"
       aria-label="Hero section - Introduction"
       role="banner"
     >
-      <Grid>
-        <Col3>
-          <motion.div 
-            className={`flex items-center gap-4 sm:gap-6 ma-md`}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <div>
-              <div className="info-text">Hello, I am</div>
-            </div>
-            <div className="flex-1 h-px bg-foreground/20" />
-          </motion.div>
+      {/* Subtle background elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-foreground/3 to-transparent rounded-full blur-xl -z-10"></div>
+      <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-tl from-foreground/4 to-transparent rounded-full blur-lg -z-10"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-foreground/2 to-transparent rounded-full blur-md -z-10"></div>
+        {/* Centered Layout - Embracing Ma (negative space) and Kanso (simplicity) */}
+        <div className="flex flex-col items-center text-center space-y-6 max-w-4xl mx-auto px-4">
           
-          <div className="space-y-6 sm:space-y-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="sr-only"
-            >
-              John Lester Escarlan - Full Stack Developer
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight"
-              style={{ letterSpacing: '-0.02em' }}
-              role="heading"
-              aria-level={1}
-            >
-              John Lester Escarlan
-            </motion.div>
-            <motion.p 
-              className="border-l border-foreground/30 text-foreground pl-4 sm:pl-6 text-justify leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
-              {info.personal.introduction}
-            </motion.p>
-          </div>
-
+          {/* Photo - Enhanced with better breathing room and subtle animations */}
           <motion.div 
-            className="mt-8 sm:mt-12 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
+            className="relative mb-8"
+            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            whileHover={{ scale: 1.02, rotate: 1 }}
+          >
+            
+            {/* Circular photo with enhanced presence */}
+            <div className="relative z-10 w-40 h-40 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-2 ring-foreground/15">
+              <StyledImage 
+                imageLink="/hero-image.png" 
+                label="John Lester Escarlan - Professional headshot"
+              />
+            </div>
+            
+          </motion.div>
+
+          {/* Name - Primary Focus */}
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            role="heading"
+            aria-level={1}
+          >
+            John Lester Escarlan
+          </motion.h1>
+
+          {/* Role and Personal Statement - Enhanced hierarchy */}
+          <motion.div 
+            className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <Link
-              href="/john_lester_escarlan_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium tracking-wide text-foreground/90">
+              Software Engineer
+            </h2>
+            
+            {/* Personal statement - direct and punchy */}
+            <motion.p 
+              className="text-base sm:text-lg text-foreground/75 max-w-xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0, duration: 0.6 }}
             >
-              <Button size="lg" variant="outline" className="w-full sm:w-auto" aria-label="Download resume PDF">
-                Resume
-              </Button>
-            </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={(e) => handleClick("contact-me", e)}
-              className="w-full sm:w-auto"
-              aria-label="Navigate to contact section"
-            >
-              Contact Me
-            </Button>
+              Building thoughtful digital experiences
+            </motion.p>
+          </motion.div>
 
-            <Info>Available for collaboration</Info>
-          </motion.div>
-        </Col3>
-        <Col2>
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            <StyledImage imageLink="/hero-image.png" label="John Lester Escarlan - Professional headshot" />
-          </motion.div>
-          <motion.div 
-            className="absolute -bottom-2 sm:-bottom-4 right-4 sm:right-12 flex gap-2 sm:gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-          >
-            {socialLinks.map(({ href, icon: Icon, label }, index) => (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.1 + index * 0.1, duration: 0.4 }}
-              >
-                <Link
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    href.startsWith("http") ? "noopener noreferrer" : undefined
-                  }
-                  aria-label={label}
-                >
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="rounded-full p-2"
-                    aria-label={label}
-                  >
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </Button>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </Col2>
-      </Grid>
+         
+      </div>
     </motion.section>
   );
 };

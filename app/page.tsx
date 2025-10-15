@@ -4,6 +4,7 @@ import JourneySection from "@/components/sections/JourneySection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import TechStackSection from "@/components/sections/TechStackSection";
+import TrustSection from "@/components/sections/TrustSection";
 
 export default function Home() {
   return (

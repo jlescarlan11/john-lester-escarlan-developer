@@ -1,5 +1,32 @@
 export const projectsData = [
   {
+    title: "WhatsRecip",
+    category: "Full-Stack Recipe Management System",
+    description: [
+      "Developed a comprehensive recipe management platform with advanced search, filtering, and review capabilities, featuring both user authentication and recipe creation workflows.",
+      "Built a modern full-stack application using Next.js 15 with React 19 and Spring Boot, implementing JWT authentication, real-time search, and responsive design with 90+ Lighthouse performance scores.",
+    ],
+    image: "/projects/proj_whatsrecip.svg", 
+    technologies: [
+      "next.js",
+      "react", 
+      "typeScript",
+      "spring boot",
+      "java",
+      "mysql",
+      "jwt",
+      "tailwind css",
+      "react query",
+      "framer motion"
+    ],
+    date: "October 2025",
+    link: {
+      github: "https://github.com/jlescarlan11/whatsrecipp", 
+      preview: "https://whatsrecip.vercel.app/",
+    },
+    featured: true,
+  },
+  {
     title: "SmartSched",
     category: "Intelligent Scheduling App",
     description: [
@@ -7,7 +34,7 @@ export const projectsData = [
       "Implemented advanced scheduling algorithms and user-friendly interface design, achieving seamless appointment management and improved productivity for users.",
     ],
     image: "/projects/proj_smart_sched.png",
-    technologies: ["Next.js", "ShadCn", "Typescript", "Motion"],
+    technologies: ["next.js", "shadcn", "typescript", "motion"],
     date: "September 2025",
     link: {
       github: "https://github.com/jlescarlan11/SchedSmart",
