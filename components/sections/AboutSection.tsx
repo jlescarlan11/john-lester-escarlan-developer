@@ -216,63 +216,6 @@ const AboutSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Approach Principles Side by Side */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            {/* Data-driven */}
-            <motion.div variants={itemVariants}>
-              <div className="bg-white dark:bg-gray-950 border-2 border-gray-200 dark:border-gray-800 rounded-lg p-5 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm group cursor-pointer hover:shadow-md">
-                <div className="text-center relative min-h-[28px] flex items-center justify-center">
-                  {/* Title - fades out on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-                    <h3 >Data-driven</h3>
-                  </div>
-                  {/* Description - fades in on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p>
-                      Making decisions based on metrics, analytics, and evidence
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Proactive */}
-            <motion.div variants={itemVariants}>
-              <div className="bg-white dark:bg-gray-950 border-2 border-gray-200 dark:border-gray-800 rounded-lg p-5 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm group cursor-pointer hover:shadow-md">
-                <div className="text-center relative min-h-[28px] flex items-center justify-center">
-                  {/* Title - fades out on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-                    <h3>Proactive</h3>
-                  </div>
-                  {/* Description - fades in on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p>
-                      Anticipating problems before they arise, staying ahead of challenges
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Clean Code */}
-            <motion.div variants={itemVariants}>
-              <div className="bg-white dark:bg-gray-950 border-2 border-gray-200 dark:border-gray-800 rounded-lg p-5 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-700 shadow-sm group cursor-pointer hover:shadow-md">
-                <div className="text-center relative min-h-[28px] flex items-center justify-center">
-                  {/* Title - fades out on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-                    <h3>Clean Code</h3>
-                  </div>
-                  {/* Description - fades in on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p>
-                      Writing maintainable, readable code following best practices
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-        </div>
       </motion.div>
     </SectionWrapper>
   );
