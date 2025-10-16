@@ -1,18 +1,8 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import StyledImage from "@/components/ui/image";
-import info from "@/data/info";
-import socialLinks from "@/data/socialLinks";
-import { smoothScrollToSection } from "@/utils/smoothScroll";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 const HeroSection = () => {
-  const handleClick = (sectionId: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    smoothScrollToSection(sectionId);
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -42,7 +32,7 @@ const HeroSection = () => {
             {/* Circular photo with enhanced presence */}
             <div className="relative z-10 w-40 h-40 lg:w-80 lg:h-80 rounded-full overflow-hidden ring-2 ring-foreground/15">
               <StyledImage 
-                imageLink="/hero-image.png" 
+                imageLink="/hero-image.svg" 
                 label="John Lester Escarlan - Professional headshot"
               />
             </div>

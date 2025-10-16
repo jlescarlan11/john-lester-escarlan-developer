@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import latex from "node-latex";
 import projectsData from "@/data/projects";
-import { techStack } from "@/data/techStack";
+import { techStackData } from "@/data/techStack";
 import info from "@/data/info";
 
 // Type definitions
@@ -370,7 +370,7 @@ const getFeaturedProjects = (): ProjectData[] => {
 
 // Convert your tech stack to array of names
 const getUserTechStack = (): string[] => {
-  return techStack.map((tech) => tech.name);
+  return techStackData.map((tech) => tech.name);
 };
 
 const categorizeUserTechs = (userTechs: string[]) => {

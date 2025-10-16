@@ -27,7 +27,9 @@ export interface CardVariantsProps extends VariantProps<typeof cardVariants> {
   className?: string;
 }
 
-export const getCardStyles = (props: CardVariantsProps) => 
-  cn(cardVariants(props), props.className);
+export const getCardStyles = (props: CardVariantsProps) => {
+  const { className, ...variantProps } = props;
+  return cn(cardVariants(variantProps), className);
+};
 
 export { cardVariants };
